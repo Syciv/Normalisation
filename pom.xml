@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>ru.film</groupId>
+    <artifactId>filmopedia</artifactId>
+    <version>0.1</version>
+    <name>filmopedia</name>
+    <description>filmopedia</description>
+    <properties>
+        <java.version>17</java.version>
+        <poi.version>5.2.1</poi.version>
+        <project.package.name>${project.groupId}</project.package.name>
+        <project.database.postgresql.version>14-alpine</project.database.postgresql.version>
+        <db.username>postgres</db.username>
+        <db.password>postgres</db.password>
+    </properties>
+    <dependencies>
+
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>1.16.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.17.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>1.16.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+
+        <profile>
+            <id>build</id>
+            <build>
+
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                                <configuration>
+                                    <target>
+                                        <mkdir dir="${project.build.directory}/test-classes"/>
+                                        <mkdir dir="${project.build.directory}/classes"/>
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.gmaven</groupId>
+                        <artifactId>groovy-maven-plugin</artifactId>
+                        <version>2.1.1</version>
+                        <executions>
+                            <execution>
+                                <!-- Start the container in any phase before the actual code
+                                     generation is required, i.e. at the latest in
+                                     generate-sources -->
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>execute</goal>
+                                </goals>
+                                <configuration>
+                                    <source>import org.testcontainers.containers.PostgreSQLContainer
+
+                                    db = new PostgreSQLContainer(
+                                            "postgres:14")
+                                            .withUsername("${db.username}")
+                                            .withDatabaseName("cts")
+                                            .withPassword("${db.password}");
+
+                                    db.start();
+
+                                    // After you've started the container, collect its generated
+                                    // JDBC URL (which contains a random port)
+                                    project.properties.setProperty('db.url', db.getJdbcUrl());
+//                                        println "test";
+//                                        println db.getJdbcUrl();
+                                    </source>
+                                </configuration>
+                            </execution>
+                        </executions>
+
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.testcontainers</groupId>
+                                <artifactId>postgresql</artifactId>
+                                <version>1.16.2</version>
+                            </dependency>
+                        </dependencies>
+
+
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-maven-plugin</artifactId>
+                        <configuration>
+                            <url>${db.url}</url>
+                            <username>${db.username}</username>
+                            <password>${db.password}</password>
+                            <changeLogFile>${basedir}/src/main/resources/db/changelog.xml</changeLogFile>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.jooq</groupId>
+                        <artifactId>jooq-codegen-maven</artifactId>
+
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+
+                                <configuration>
+                                    <jdbc>
+                                        <url>${db.url}</url>
+                                        <user>${db.username}</user>
+                                        <password>${db.password}</password>
+                                    </jdbc>
+                                    <generator>
+                                        <name>org.jooq.codegen.JavaGenerator</name>
+                                        <database>
+                                            <name>org.jooq.meta.postgres.PostgresDatabase</name>
+                                            <includes>.*</includes>
+                                            <schemata>
+                                                <schema>
+                                                    <inputSchema>filmopedia</inputSchema>
+                                                </schema>
+                                            </schemata>
+                                        </database>
+                                        <target>
+                                            <packageName>${project.package.name}.filmopedia</packageName>
+                                            <directory>target/generated-sources/jooq</directory>
+                                        </target>
+                                        <generate>
+                                            <pojos>true</pojos>
+<!--                                            <daos>true</daos>-->
+                                            <validationAnnotations>true</validationAnnotations>
+                                            <springAnnotations>true</springAnnotations>
+                                            <globalObjectReferences>true</globalObjectReferences>
+                                            <pojosEqualsAndHashCode>true</pojosEqualsAndHashCode>
+                                            <fluentSetters>true</fluentSetters>
+                                        </generate>
+                                    </generator>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <db.url>${db.url}</db.url>
+                                <db.username>${db.username}</db.username>
+                                <db.password>${db.password}</db.password>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                </exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>17</source>
+                            <target>17</target>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
