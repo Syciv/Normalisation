@@ -9,6 +9,7 @@ import liquibase.database.jvm.JdbcConnection;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
 import ru.film.filmopedia.repository.FilmRepository;
+import ru.film.filmopedia.repository.FilmopediaRepository;
 import ru.film.filmopedia.tables.pojos.Film;
 
 import java.sql.Connection;
@@ -37,10 +38,10 @@ public class Application {
 //        }
 
         FilmRepository filmRepository = new FilmRepository();
+        FilmopediaRepository filmopediaRepository = new FilmopediaRepository();
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Ivan\\IdeaProjects\\Normalisation\\films.db");
 
-        List<Film> films = filmRepository.fetchList();
-
-        System.out.println(films);
+        System.out.println(filmopediaRepository.fetchAll(connection));
 
     }
 }
