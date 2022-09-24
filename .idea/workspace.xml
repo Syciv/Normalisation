@@ -4,18 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af4f384-fa52-4412-8613-3dff87885f6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/PersonRepository.java" afterDir="false" />
+    <list default="true" id="0af4f384-fa52-4412-8613-3dff87885f6c" name="Changes" comment="пом">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/CountryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmopediaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/GenreEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/NewEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/PersonEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/RefFilmGenreEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/NewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/service/FilmopediaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/dto/FilmopediaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/dto/FilmopediaDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmopediaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmopediaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,6 +56,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Rep/film-noimalisation&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -57,11 +71,11 @@
       <recent name="D:\Rep\film-noimalisation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.ru.film.filmopedia.Application">
+    <configuration name="ru.film.filmopedia.Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.film.filmopedia.Application" />
-      <module name="untitled" />
-      <option name="VM_PARAMETERS" value="-Durl=jdbc:postgresql://localhost:5432/filmopedia -Dusername=postgres -Dpassword=postgres -Dliquibase.change-log=src/resources/db/changelog.sqle" />
+      <module name="film-noimalisation" />
+      <option name="VM_PARAMETERS" value="-Durl=jdbc:postgresql://localhost:5432/filmopedia -Dusername=postgres -Dpassword=postgres -Dliquibase.change-log=src/resources/db/changelog.sql" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.film.filmopedia.*" />
@@ -82,11 +96,11 @@
     </configuration>
     <list>
       <item itemvalue="Application.ru.film.repository.Application" />
-      <item itemvalue="Application.Application" />
+      <item itemvalue="Application.ru.film.filmopedia.Application" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.ru.film.filmopedia.Application" />
         <item itemvalue="Application.ru.film.repository.Application" />
       </list>
     </recent_temporary>
@@ -99,8 +113,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663488906563</updated>
+      <workItem from="1664011954666" duration="3253000" />
+      <workItem from="1664019844520" duration="6593000" />
     </task>
+    <task id="LOCAL-00001" summary="пом">
+      <created>1663811265995</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663811265995</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -112,5 +139,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="пом" />
+    <option name="LAST_COMMIT_MESSAGE" value="пом" />
   </component>
 </project>

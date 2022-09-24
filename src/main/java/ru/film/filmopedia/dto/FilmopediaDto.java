@@ -4,25 +4,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.sql.Date;
 
 @Data
 @AllArgsConstructor
 public class FilmopediaDto {
-    private Long id;
-    private Long filmEntityId;
+    private Integer id;
+    private Integer filmEntityId;
     private String filmName;
-    private LocalDate filmDateOfRelease;
-    private Long personEntityId;
+    private String filmDateOfRelease;
+    private Integer personEntityId;
     private String personName;
     private String personSurname;
-    private LocalDate dateOfBirth;
-    private Long countryEntityId;
+    private String dateOfBirth;
+    private Integer countryEntityId;
     private String countryName;
-    private Long personTypeEntityId;
+    private Integer personTypeEntityId;
     private String personTypeName;
-    private Long genreEntityId;
+    private Integer genreEntityId;
     private String genreName;
-    private Long newEntityId;
+    private Integer newEntityId;
     private String newName;
     private String newText;
 }
