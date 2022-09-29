@@ -14,6 +14,11 @@ import ru.film.filmopedia.repository.FilmopediaRepository;
 import ru.film.filmopedia.service.FilmopediaService;
 import ru.film.filmopedia.tables.pojos.Film;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,7 +30,7 @@ import java.util.Scanner;
 import static org.postgresql.core.ConnectionFactory.openConnection;
 
 public class Application {
-    public static void main(String[] args) throws SQLException, LiquibaseException {
+    public static void main(String[] args) throws SQLException, LiquibaseException, IOException, InterruptedException {
 
         System.out.println("Введите путь к файлу SQLite:");
         Scanner scanner = new Scanner(System.in);
@@ -35,5 +40,17 @@ public class Application {
         FilmopediaService filmopediaService = new FilmopediaService();
         filmopediaService.saveEntities(sqliteConnection);
         System.out.println("В БД успешно добавлены новые записи из SQLite");
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://127.0.0.1:5000/"))
+                .build();
+
+        HttpResponse<String> response = client.send(request,
+                HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
+        System.out.println("Экспорт прошёл успешно");
+
     }
 }

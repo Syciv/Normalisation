@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af4f384-fa52-4412-8613-3dff87885f6c" name="Changes" comment="пом">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/CountryEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmopediaEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/GenreEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/NewEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/PersonEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/RefFilmGenreEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/NewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/service/FilmopediaService.java" afterDir="false" />
+    <list default="true" id="0af4f384-fa52-4412-8613-3dff87885f6c" name="Changes" comment="Готова нормализация">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/dto/FilmopediaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/dto/FilmopediaDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmopediaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/repository/FilmopediaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +101,12 @@
       <option name="presentableId" value="Default" />
       <updated>1663488906563</updated>
       <workItem from="1664011954666" duration="3253000" />
-      <workItem from="1664019844520" duration="6593000" />
+      <workItem from="1664019844520" duration="7390000" />
+      <workItem from="1664036649731" duration="499000" />
+      <workItem from="1664096757187" duration="353000" />
+      <workItem from="1664103954740" duration="931000" />
+      <workItem from="1664106100527" duration="651000" />
+      <workItem from="1664121602803" duration="1215000" />
     </task>
     <task id="LOCAL-00001" summary="пом">
       <created>1663811265995</created>
@@ -123,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663811265995</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Готова нормализация">
+      <created>1664028080836</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664028080836</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +141,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="пом" />
-    <option name="LAST_COMMIT_MESSAGE" value="пом" />
+    <MESSAGE value="Готова нормализация" />
+    <option name="LAST_COMMIT_MESSAGE" value="Готова нормализация" />
   </component>
 </project>
