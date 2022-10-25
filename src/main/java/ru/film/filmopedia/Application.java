@@ -9,6 +9,8 @@ import liquibase.database.jvm.JdbcConnection;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
 import org.jooq.meta.derby.sys.Sys;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import ru.film.filmopedia.repository.FilmRepository;
 import ru.film.filmopedia.repository.FilmopediaRepository;
 import ru.film.filmopedia.service.FilmopediaService;
@@ -29,28 +31,29 @@ import java.util.Scanner;
 
 import static org.postgresql.core.ConnectionFactory.openConnection;
 
+@SpringBootApplication
 public class Application {
     public static void main(String[] args) throws SQLException, LiquibaseException, IOException, InterruptedException {
-
+        SpringApplication.run(Application.class);
         System.out.println("Введите путь к файлу SQLite:");
-        Scanner scanner = new Scanner(System.in);
-        String fileName = scanner.next();
+//        Scanner scanner = new Scanner(System.in);
+//        String fileName = scanner.next();
 
-        Connection sqliteConnection = DriverManager.getConnection("jdbc:sqlite:" + fileName);
-        FilmopediaService filmopediaService = new FilmopediaService();
-        filmopediaService.saveEntities(sqliteConnection);
-        System.out.println("В БД успешно добавлены новые записи из SQLite");
-
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://127.0.0.1:5000/"))
-                .build();
-
-        HttpResponse<String> response = client.send(request,
-                HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.body());
-        System.out.println("Экспорт прошёл успешно");
+//        Connection sqliteConnection = DriverManager.getConnection("jdbc:sqlite:" + fileName);
+//        FilmopediaService filmopediaService = new FilmopediaService();
+//        filmopediaService.saveEntities(sqliteConnection);
+//        System.out.println("В БД успешно добавлены новые записи из SQLite");
+//
+//        HttpClient client = HttpClient.newHttpClient();
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .uri(URI.create("http://127.0.0.1:5000/"))
+//                .build();
+//
+//        HttpResponse<String> response = client.send(request,
+//                HttpResponse.BodyHandlers.ofString());
+//
+//        System.out.println(response.body());
+//        System.out.println("Экспорт прошёл успешно");
 
     }
 }
