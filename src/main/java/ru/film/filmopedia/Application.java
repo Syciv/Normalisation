@@ -37,7 +37,7 @@ public class Application {
         SpringApplication.run(Application.class);
         System.out.println("Введите путь к файлу SQLite:");
 //        Scanner scanner = new Scanner(System.in);
-//        String fileName = scanner.next();
+//        String fileName =  "films.db" ;// scanner.next();
 
 //        Connection sqliteConnection = DriverManager.getConnection("jdbc:sqlite:" + fileName);
 //        FilmopediaService filmopediaService = new FilmopediaService();

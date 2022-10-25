@@ -3,6 +3,7 @@ package ru.film.filmopedia.entity;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import ru.film.filmopedia.dto.FilmopediaDto;
 import ru.film.filmopedia.tables.records.FilmRecord;
@@ -10,7 +11,7 @@ import ru.film.filmopedia.tables.records.FilmRecord;
 import java.time.LocalDate;
 import java.util.Set;
 
-@Service
+@Component
 public class FilmEntity extends FilmopediaEntity<FilmRecord> {
 
     public FilmEntity(Set<FilmRecord> map, DSLContext dslContext) {

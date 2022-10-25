@@ -1,8 +1,7 @@
 package ru.film.filmopedia.service;
 
 import lombok.AllArgsConstructor;
-import org.apache.commons.lang3.tuple.Triple;
-import org.apache.commons.math3.util.Pair;
+
 import org.springframework.stereotype.Service;
 import ru.film.filmopedia.dto.FilmopediaDto;
 import ru.film.filmopedia.entity.*;

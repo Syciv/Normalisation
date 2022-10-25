@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af4f384-fa52-4412-8613-3dff87885f6c" name="Changes" comment="Готов вызов экспорта">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/config/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/data/FilmMessageDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/handler/WebSocketFilmsHandler.java" afterDir="false" />
+    <list default="true" id="0af4f384-fa52-4412-8613-3dff87885f6c" name="Changes" comment="Допилил ченджлог">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/data/FilmMessageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/dto/FilmMessageDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/CountryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/CountryEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmopediaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/FilmopediaEntity.java" afterDir="false" />
@@ -18,6 +17,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/NewEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/NewEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/PersonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/PersonEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/RefFilmGenreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/RefFilmGenreEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/RefPersonFilmEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/entity/RefPersonFilmEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/handler/WebSocketFilmsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/handler/WebSocketFilmsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/service/FilmopediaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/film/filmopedia/service/FilmopediaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -32,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,6 +64,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/Rep/film-noimalisation",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -101,7 +103,8 @@
       </method>
     </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="film-noimalisation" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="filmopedia" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.film.filmopedia.Application" />
       <extension name="coverage">
         <pattern>

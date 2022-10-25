@@ -1,11 +1,13 @@
 package ru.film.filmopedia.entity;
 
 import org.jooq.DSLContext;
+import org.springframework.stereotype.Component;
 import ru.film.filmopedia.dto.FilmopediaDto;
 import ru.film.filmopedia.tables.records.NewRecord;
 
 import java.util.Set;
 
+@Component
 public class NewEntity extends FilmopediaEntity<NewRecord> {
 
     public NewEntity(Set<NewRecord> map, DSLContext dslContext) {

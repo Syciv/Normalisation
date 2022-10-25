@@ -83,14 +83,7 @@
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen</artifactId>
-            <version>3.15.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-codegen-maven</artifactId>
-            <version>3.15.4</version>
-            <type>maven-plugin</type>
+            <version>3.17.4</version>
         </dependency>
 
         <dependency>
@@ -108,6 +101,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jooq</artifactId>
+            <version>2.6.1</version>
         </dependency>
 
         <dependency>
@@ -157,7 +157,7 @@
                             </schemata>
                         </database>
                         <target>
-                            <packageName>${project.package.name}.filmopedia</packageName>
+                            <packageName>org.jooq.codegen.maven.example</packageName>
                             <directory>target/generated-sources/jooq</directory>
                         </target>
                         <generate>

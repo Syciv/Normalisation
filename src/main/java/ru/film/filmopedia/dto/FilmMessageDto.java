@@ -1,4 +1,4 @@
-package ru.film.filmopedia.data;
+package ru.film.filmopedia.dto;
 
 import lombok.Data;
 import ru.film.filmopedia.dto.FilmopediaDto;
