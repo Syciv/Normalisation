@@ -76,3 +76,14 @@ CREATE TABLE filmopedia.ref_film_genre
     genre_id bigint
 );
 
+--changeset ivan_sych:11
+ALTER TABLE filmopedia.film ADD COLUMN datetime_of_delete timestamp;
+ALTER TABLE filmopedia.country ADD COLUMN datetime_of_delete timestamp;
+ALTER TABLE filmopedia.person ADD COLUMN datetime_of_delete timestamp;
+ALTER TABLE filmopedia.new ADD COLUMN datetime_of_delete timestamp;
+ALTER TABLE filmopedia.genre ADD COLUMN datetime_of_delete timestamp;
+ALTER TABLE filmopedia.person_type ADD COLUMN datetime_of_delete timestamp;
+ALTER TABLE filmopedia.ref_person_film ADD COLUMN datetime_of_delete timestamp;
+ALTER TABLE filmopedia.ref_film_genre ADD COLUMN datetime_of_delete timestamp;
+
+
