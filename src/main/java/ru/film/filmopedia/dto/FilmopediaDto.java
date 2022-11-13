@@ -3,9 +3,6 @@ package ru.film.filmopedia.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.sql.Date;
-
 @Data
 @AllArgsConstructor
 public class FilmopediaDto {
