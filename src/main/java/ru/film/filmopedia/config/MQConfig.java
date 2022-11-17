@@ -53,13 +53,13 @@ public class MQConfig {
         connectionFactory.setPort(Integer.parseInt(port));
 
         KeyStore clientStore = KeyStore.getInstance("PKCS12");
-        clientStore.load(new FileInputStream("client.p12"), "passwordhihi".toCharArray());
+        clientStore.load(new FileInputStream("certs/client_ivan-VirtualBox_key.p12"), System.getProperty("keypassword").toCharArray());
 
         KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-        kmf.init(clientStore, "passwordhihi".toCharArray());
+        kmf.init(clientStore,  System.getProperty("keypassword").toCharArray());
         KeyManager[] kms = kmf.getKeyManagers();
 
-        InputStream is = new FileInputStream("ca_certificate.pem");
+        InputStream is = new FileInputStream("certs/ca_certificate.pem");
 
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
         X509Certificate caCert = (X509Certificate)cf.generateCertificate(is);

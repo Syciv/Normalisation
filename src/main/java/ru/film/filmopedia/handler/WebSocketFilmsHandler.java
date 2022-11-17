@@ -22,8 +22,7 @@ public class WebSocketFilmsHandler extends TextWebSocketHandler {
 
     @Override
     public void handleTextMessage(@NotNull WebSocketSession session, TextMessage message) throws SQLException {
-//        System.out.println("=============");
-//        System.out.println(message.getPayload());
+        System.out.println(message.getPayload());
         FilmopediaDto filmopediaDto = new Gson().fromJson(message.getPayload(), FilmopediaDto.class);
         filmopediaService.saveEntities(filmopediaDto);
     }
